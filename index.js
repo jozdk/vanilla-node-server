@@ -3,9 +3,9 @@ const fs = require("fs");
 
 const getViewUrl = (url) => {
     if (url === "/") {
-        url = "/index";
+        url = "/index.html";
     }
-    return `views${url}.html`;
+    return `./views${url}`;
 }
 
 const sendErrorResponse = (res) => {
@@ -21,24 +21,26 @@ http.createServer((req, res) => {
     
     let url = req.url;
 
+    console.log(url);
     console.log(url.indexOf(".html"));
 
-    if (url.indexOf(".html")) {
+    if (url.indexOf(".html") !== -1) {
+        console.log("Handling HTML request");
         res.writeHead(200, {
             "Content-Type": "text/html"
         });
         customReadFile(getViewUrl(url), res);
-    } else if (url.indexOf(".js")) {
+    } else if (url.indexOf(".js") !== -1) {
         res.writeHead(200, {
             "Content-Type": "text/javascript"
         });
         customReadFile(`./public/js${url}`, res);
-    } else if (url.indexOf(".css")) {
+    } else if (url.indexOf(".css") !== -1) {
         res.writeHead(200, {
             "Content-Type": "text/css"
         });
         customReadFile(`./public/css${url}`, res);
-    } else if (url.indexOf(".png")) {
+    } else if (url.indexOf(".png") !== -1) {
         res.writeHead(200, {
             "Content-Type": "image/png"
         });

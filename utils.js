@@ -6,7 +6,7 @@ module.exports = {
         fs.readFile(`./${file}`, (error, data) => {
             if (error) {
                 res.writeHead(500, contentTypes.html);
-                res.end("There was an error on the server. Try again or contact site administrators.");
+                res.end("<h1>There was an error on the server. Try again or contact site administrators.</h1>");
             }
             res.end(data);
         });

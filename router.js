@@ -10,7 +10,7 @@ exports.handle = (req, res) => {
     try {
         routes[req.method][req.url](req, res);
     } catch (e) {
-        res.writeHead(200, contentTypes.html);
+        res.writeHead(404, contentTypes.html);
         utils.getFile("views/error.html", res);
     }
 };

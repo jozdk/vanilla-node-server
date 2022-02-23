@@ -26,4 +26,4 @@ router.get("/style.css", (req, res) => {
 
 http.createServer(router.handle).listen(3000);
 
-console.log("The server has started and is listening on port 3000");
+console.log("The server is listening on port 3000");

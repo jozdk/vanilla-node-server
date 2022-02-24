@@ -3,8 +3,6 @@ const path = require("path");
 const { routes } = require("./router.js");
 const contentTypes = require("./contentTypes");
 const utils = require("./utils");
-// const routes = require("./testRoutes.js");
-
 
 module.exports = (folder) => {
     console.log("Static File Routes are being registered");

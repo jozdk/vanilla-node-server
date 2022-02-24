@@ -1,20 +1,20 @@
 module.exports = {
-    html: {
+    ".html": {
         "Content-Type": "text/html"
     },
-    text: {
+    ".text": {
         "Content-Type": "text/plain"
     },
-    js: {
+    ".js": {
         "Content-Type": "text/js"
     },
-    jpg: {
+    ".jpg": {
         "Content-Type": "image/jpg"
     },
-    png: {
+    ".png": {
         "Content-Type": "image/png"
     },
-    css: {
+    ".css": {
         "Content-Type": "text/css"
     }
 };

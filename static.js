@@ -5,7 +5,7 @@ const contentTypes = require("./contentTypes");
 const utils = require("./utils");
 
 module.exports = (folder) => {
-    console.log("Static File Routes are being registered");
+    console.log("Static file routes are being registered...");
     const dirContent = fs.readdirSync(folder); // For the moment does not support subfolders in public!
     dirContent.forEach(file => {
         routes["GET"][`/${file}`] = (req, res) => {
@@ -14,5 +14,3 @@ module.exports = (folder) => {
         }
     });  
 };
-
-console.log(routes);

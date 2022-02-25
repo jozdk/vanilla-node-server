@@ -1,7 +1,7 @@
 const contentTypes = require("./contentTypes.js"),
-    utils = require("./utils.js"),
-    fs = require("fs"),
-    path = require("path");
+    utils = require("./utils.js");
+    // fs = require("fs"),
+    // path = require("path");
 
 const routes = {
     "GET": {},

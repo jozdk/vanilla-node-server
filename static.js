@@ -10,7 +10,7 @@ module.exports = (folder) => {
     dirContent.forEach(file => {
         routes["GET"][`/${file}`] = (req, res) => {
             res.writeHead(200, contentTypes[path.extname(file)]);
-            utils.getFile(path.join(folder, file), res);
+            utils.sendFile(path.join(folder, file), res);
         }
     });  
 };

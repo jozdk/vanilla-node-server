@@ -14,7 +14,7 @@ exports.handle = (req, res) => {
     } catch (e) {
         console.log(e.message);
         res.writeHead(404, contentTypes[".html"]);
-        utils.getFile("public/error.html", res);
+        utils.sendFile("public/error.html", res);
     }
 };
 

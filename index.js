@@ -10,7 +10,7 @@ console.log("The router has these routes: ", router.routes);
 
 router.get("/", (req, res) => {
     res.writeHead(200, contentTypes[".html"]);
-    utils.getFile("public/index.html", res);
+    utils.sendFile("public/index.html", res);
 });
 
 http.createServer(router.handle).listen(3000);

@@ -9,10 +9,14 @@ module.exports = (folder) => {
         try {
             const filePath = req.url;
             const data = fs.readFileSync(path.join(folder, filePath));
-            res.writeHead(200, path.extname(filePath));
+            res.writeHead(200, contentTypes[path.extname(filePath)]);
             res.end(data);
         } catch(err) {
-            console.log("The requested ressource is not in public folder");
+            if (err.code === "ENOENT") {
+                console.log(`The requested ressource is not in public folder: ${path.basename(err.path)}`);
+            } else {
+                console.log(err);
+            }
         }
     };
 }

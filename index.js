@@ -4,9 +4,11 @@ const http = require("http"),
     contentTypes = require("./contentTypes.js"),
     utils = require("./utils.js"),
     router = require("./router.js"),
-    static = require("./static.js")
+    static = require("./static.js"),
+    logger = require("./logger.js")
 
 const app = new App();
+app.use(logger);
 app.use(static(path.join(__dirname, "public")));
 app.use(router.handle);
 
